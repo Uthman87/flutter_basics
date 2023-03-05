@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
       _questionIndex += 1;
     });
@@ -58,9 +58,9 @@ class MyAppState extends State<MyApp> {
               const SizedBox(
                 height: 60.0,
               ),
-              Answer(),
-              Answer(),
-              Answer(),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
             ],
           ),
         ),
