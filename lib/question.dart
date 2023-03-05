@@ -14,7 +14,7 @@ class Question extends StatelessWidget {
         style: const TextStyle(
             fontFamily: 'Times New Roman',
             fontWeight: FontWeight.bold,
-            color: Colors.black,
+            color: Colors.black26,
             fontSize: 25.0),
       ),
     );
