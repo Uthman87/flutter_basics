@@ -48,15 +48,21 @@ class MyAppState extends State<MyApp> {
           ),
           centerTitle: true,
         ),
-        body: Column(
-          children: [
-            Question(
-              questions[_questionIndex],
-            ),
-            const Answer(),
-            const Answer(),
-            const Answer(),
-          ],
+        body: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Question(
+                questions[_questionIndex],
+              ),
+              const SizedBox(
+                height: 60.0,
+              ),
+              Answer(),
+              Answer(),
+              Answer(),
+            ],
+          ),
         ),
       ),
     );

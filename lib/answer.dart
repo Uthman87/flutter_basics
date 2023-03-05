@@ -1,9 +1,11 @@
-// ignore_for_file: sized_box_for_whitespace
+// ignore_for_file: sized_box_for_whitespace, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
-  const Answer({super.key});
+  // final Function selectHandler;
+
+  // Answer(this.selectHandler);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,11 @@ class Answer extends StatelessWidget {
         vertical: 0.0,
         horizontal: 15.0,
       ),
-      child: const ElevatedButton(
-        onPressed: null,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue,
+        ),
+        onPressed: () {},
         child: Text('Answer 1'),
       ),
     );
