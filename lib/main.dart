@@ -27,9 +27,23 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'What\'s your name?',
-      'Which school do you attend?',
-      'What\'s your favorite food?'
+      {
+        'questionText': 'What\'s your name?',
+        'answers': [
+          'Uthman Bin Adam',
+          'Memuna Bint Adam',
+          'Habeeba Bint Adam',
+          'Abdul Malik Bin Adam'
+        ]
+      },
+      {
+        'questionText': 'Which is the best SHS in Ghana?',
+        'answers': ['GSTS', 'Botwe', 'Adisco']
+      },
+      {
+        'questionText': 'Which is the best University in Ghana',
+        'answers': ['UMaT', 'Ashasi', 'UoG']
+      }
     ];
 
     return MaterialApp(
@@ -53,14 +67,16 @@ class MyAppState extends State<MyApp> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Question(
-                questions[_questionIndex],
+                // questions[_questionIndex],
+                questions[_questionIndex]['questionText'] as String,
               ),
               const SizedBox(
                 height: 60.0,
               ),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
+              ...(questions[_questionIndex]['answers'] as List<String>)
+                  .map((answer) {
+                return Answer(_answerQuestion, answer);
+              }).toList()
             ],
           ),
         ),
